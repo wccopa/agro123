@@ -1,0 +1,40 @@
+.usuario-nombre {
+  color: red; /* Color verde oscuro */
+  font-style: italic;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+.img {
+  border-radius: 180px;
+}
+
+.parrafo {
+  text-align: center;
+  padding-top: 0;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 9px;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #0d7c66;
+}
+
+ion-card {
+  --background: white;
+  border-radius: 25px;
+  --color: black;
+}

@@ -1,0 +1,66 @@
+<ion-content>
+
+  @if (cart.length !== 0) {
+    <ion-list>
+      <ion-item *ngFor="let product of cart" class="product-item">
+        <ion-thumbnail slot="start">
+          <img [src]="product.image" alt="{{ product.nombre }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ product.nombre }}</h2>
+          <p class="price">{{ product.precio | currency:'PEN':'symbol':'1.2-2' }}</p>
+        </ion-label>
+        <ion-button fill="clear" slot="end" (click)="borrarProducto(product.iddoc)">
+          <ion-icon name="trash-outline" color="danger"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  
+    <ion-item lines="none" class="total-item">
+      <ion-label>
+        <h2>Total</h2>
+      </ion-label>
+      @if (precioTotal) {
+        <ion-note slot="end" color="primary">
+          {{ precioTotal.toFixed(2) }}
+        </ion-note>
+      }
+      
+  
+    </ion-item>
+  
+    <ion-button expand="block" class="checkout-button" (click)="generarPDF()">
+      Realizar Compra
+    </ion-button>
+  }@else {
+    <h1>No hay productos</h1>
+  }
+</ion-content>
+
+<style>
+  .product-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 1rem;
+  }
+
+  .product-item ion-thumbnail {
+    --size: 80px;
+    --border-radius: 8px;
+  }
+
+  .price {
+    font-weight: bold;
+    color: var(--ion-color-primary);
+  }
+
+  .total-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .checkout-button {
+    margin-top: 2rem;
+  }
+</style>

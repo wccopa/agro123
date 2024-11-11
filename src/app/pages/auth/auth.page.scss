@@ -1,0 +1,28 @@
+.logo {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+.img {
+  border-radius: 180px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 45px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button {
+  --color: white;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2px;
+}

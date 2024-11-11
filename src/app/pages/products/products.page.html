@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="button">
+    <ion-button (click)="addProduct()"
+    ><ion-icon name="add-circle" slot="end"></ion-icon> Agregar</ion-button>
+  </div>
+  
+  @for (cat of categorias; track $index) {
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        @for (item of products; track $index) {
+        <ion-item *ngIf="item.categoria === cat">
+          <ion-thumbnail slot="start">
+            <img
+              class="img"
+              alt="Silhouette of mountains"
+              src="{{item.image}}"
+            />
+          </ion-thumbnail>
+          <ion-label>{{item.nombre}}</ion-label>
+          <ion-button class="edit" (click)="addProduct(item)">
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+          <ion-button class="delete" (click)="deleteProduct(item)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+        }
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  }
+</ion-content>

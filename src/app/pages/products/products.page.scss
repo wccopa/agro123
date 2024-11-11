@@ -1,0 +1,29 @@
+.titulos {
+  display: flex;
+  justify-content: center;
+}
+ion-card {
+  --background: white; /* Igual al color de fondo del card */
+  --color: black;
+}
+ion-list {
+  --background: white; /* Igual al color de fondo del card */
+  --color: black;
+  padding: 0;
+  --border: none;
+}
+
+.edit{
+  --backgroud: rgb(58, 58, 182);
+  max-width: 40px;
+}
+.delete{
+  --background: red;
+  max-width: 40px;
+}
+
+.button{
+  width: 100%;  
+}
+
+

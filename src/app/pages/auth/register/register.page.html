@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="logo">
+    <img
+      class="img"
+      src="https://firebasestorage.googleapis.com/v0/b/pruebaintegracion-eec23.appspot.com/o/logo%20AgroInfo.jpeg?alt=media&token=b41771ea-6680-451b-9a34-ff1105538680"
+      alt=""
+    />
+  </div>
+
+  <ion-card class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="name" required>
+          <ion-icon slot="end" name="person"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" formControlName="email" required>
+          <ion-icon slot="end" name="person"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" required>
+          <ion-icon slot="end" name="key"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <div class="login">
+        <a [routerLink]="['/auth']">Iniciar Sesión</a>
+      </div>
+      
+      <div class="button">
+        <ion-button type="submit">Registrarse</ion-button>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>

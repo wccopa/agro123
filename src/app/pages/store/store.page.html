@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-button (click)="addProduct()">Agregar producto</ion-button>
+  <ion-button [routerLink]="['/cart']">Ir al carrito</ion-button>
+
+  <ion-card *ngFor="let categoria of categorias">
+    <ion-card-header>
+      <ion-card-title>{{categoria}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of productsByCategory[categoria]">
+          <ion-thumbnail slot="start">
+            <img [src]="item.image" alt="Producto" />
+          </ion-thumbnail>
+          <ion-label
+            >{{item.nombre}} <br />
+            {{item.categoria}} <br>
+            <strong>{{ item.precio | currency: 'PEN'}}</strong>
+          </ion-label>
+          <ion-button class="cart" (click)="addProductToCart(item)"
+            ><ion-icon name="cart"></ion-icon
+          ></ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
